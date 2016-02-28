@@ -97,3 +97,18 @@ sqlite3 -header -csv hrcemail.sqlite "SELECT * FROM name ORDER BY commonName,ori
 * Develop a list of phrases to remove from the full text (e.g. "PRODUCED TO HOUSE SELECT BENGHAZI COMM")
 * Infer message threads
 * Pair attachments with their messages
+
+## JF ADDS:
+
+I've hacked this up to do some other things. Was done under time pressure--its not pretty. 
+
+1. First run make_manifest.py -- which will generate metadata about each file. It assumes the command line tool 'pdfinfo' is installed and available. It writes the result to file_manifest.csv
+
+2. Run convert_to_pagewise_text.py. Runs pdftotext -layout on each pdf, page at a time, and stores the result to /txts/[file_number]_[page_number].txt. Assumes pdftotext is installed and available.
+
+3. Run read_email_metadata.py. Tries to pull out all the email metadata from each email found--not just the one at the top. Puts it into a file called email_split.csv. Will also write the part of the original text deemed to be part of that email to split_emails/[parent_document]_part[n].txt.  It writes anything that occurs before the first 'From:' line to part_0.
+
+
+
+
+
