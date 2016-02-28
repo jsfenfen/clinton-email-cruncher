@@ -1,7 +1,9 @@
 #!/bin/bash
 mkdir -p pdfs/
 mkdir -p zips/
-source virt-hrcemail/bin/activate
+# source virt-hrcemail/bin/activate
+source ../../envs/hrcemail_env/bin/activate
+
 python downloadMetadata.py
 python generatePDFList.py
 if [ $1 = "no-pdf-download" ] 
