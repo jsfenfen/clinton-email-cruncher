@@ -100,7 +100,7 @@ sqlite3 -header -csv hrcemail.sqlite "SELECT * FROM name ORDER BY commonName,ori
 
 ## JF ADDS:
 
-I've hacked this up to do some other things. Was done under time pressure--its not pretty. 
+I've hacked this up to do some other things. Was done under time pressure--its not pretty. I think you can get the pdf tools from [here](http://www.foolabs.com/xpdf/download.html). 
 
 1. First run make_manifest.py -- which will generate metadata about each file. It assumes the command line tool 'pdfinfo' is installed and available. It writes the result to file_manifest.csv
 
