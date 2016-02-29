@@ -42,8 +42,9 @@ if __name__ == '__main__':
             filename = fileregexgroups[0]
             
             output_filename = TEXT_OUTPUT_DIR + "/%s_%s.txt" % (filename, page_number)
-            layout_cmd = "pdftotext -f %s -l %s -layout %s %s" % (page_number, page_number, doc['local_filepath'], output_filename)
-            print layout_cmd
-            result = os.popen(layout_cmd).read()
-            print result
+            # only do this if files don't already exist. 
+            if not os.path.isfile(output_filename):
+                layout_cmd = "pdftotext -f %s -l %s -layout %s %s" % (page_number, page_number, doc['local_filepath'], output_filename)
+                print layout_cmd
+                result = os.popen(layout_cmd).read()
         

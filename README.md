@@ -108,6 +108,13 @@ I've hacked this up to do some other things. Was done under time pressure--its n
 
 3. Run read_email_metadata.py. Tries to pull out all the email metadata from each email found--not just the one at the top. Puts it into a file called email_split.csv. Will also write the part of the original text deemed to be part of that email to split_emails/[parent_document]_part[n].txt.  It writes anything that occurs before the first 'From:' line to part_0.
 
+4. run hash_names.py which creates allnames.csv
+
+5. run match_names.py which matches cleaned versions of allnames.csv to the wsj's name file. 
+
+6. Clean these on yr own! [I used google refine on: $ head -n 8000 matched_names.csv > top_matched_names.csv ]
+
+
 
 
 
